@@ -26,7 +26,8 @@ use App\Http\Controllers\User\BlogController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-#Route::post('/contact', 'ContactController@store')->name('usercontact.store');
+
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -43,22 +44,23 @@ Route::get('/about', function () {
 //     return view('blog');
 // })->name('blog');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+// Route::get('/contact', function () {
+//     return view('contact');
+// })->name('contact');
 
 Route::get('/service', [ServiceController::class,'index'])->name('service');
 Route::get('/blog', [BlogController::class,'index'])->name('blog');
 Route::get('/omrndecBetter/{id}', [BlogController::class,'show'])->name('omrndecBetter');
 
 
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('usercontact.store');
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', [AdminLoginController::class,'showLoginForm'])->name('admin.login');
     Route::post('/login',[AdminLoginController::class,'login'])->name('admin.login.submit');
-    Route::get('/', [AdminController::class,'index'])->name('admin');
+    Route::get('/', [AdminController::class,'index'])->name('adminDashboard');
     #Route::resource('contact', 'Admin\ContactController');
     Route::resource('contact', ContactAdminController::class);
     Route::resource('service', ServiceAdminController::class);
@@ -66,6 +68,6 @@ Route::prefix('admin')->group(function() {
 
     Route::get('service/delete/{id}', [ServiceAdminController::class,'delete'])->name('admin.service.delete');
     Route::get('blog/delete/{id}', [BlogAdminController::class,'delete'])->name('admin.blog.delete');
-    Route::get('/log_out', [AdminController::class,'logout'])->name('log_out');
+    Route::post('/logout', [AdminLoginController::class,'logout'])->name('admin.logout');
 
 });

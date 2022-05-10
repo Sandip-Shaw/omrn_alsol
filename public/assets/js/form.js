@@ -49,7 +49,7 @@ $(document).ready(function () {
 		$('#input-message').val('');
 		
 		$.ajax({
-			url: '/../contact',
+			url: './contact',
 			method: 'POST',
 			data: {
 				_token: $("#csrf").val(),
@@ -85,6 +85,7 @@ $(document).ready(function () {
 				alert('Something went wrong.');
 			},
 		});
+
 	});
 
 	$('#modal-form').on('submit', function (e) {
