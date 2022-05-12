@@ -44,8 +44,8 @@ class AdminController extends Controller
 
        
         Auth::guard('admin')->logout();
-        $request->session()->invalidate();
-        return redirect('/admin');
+        //$request->session()->invalidate();
+        return redirect('/login');
 
      }
 }

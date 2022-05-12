@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class AdminLoginController extends Controller
 {
-    public function __construct()
+	public function __construct()
     {
-        $this->middleware('guest:admin');
-    }    
+       $this->middleware('guest:admin',['except'=>['logout']]);
+    }   
 
     public function showLoginForm()
     {
@@ -35,7 +35,7 @@ class AdminLoginController extends Controller
 
     	// if successfull redirect to intended loc
 
-    		return redirect()->intended(route('admin'));
+    		return redirect()->intended(route('adminDashboard'));
 
     	}
 
@@ -43,6 +43,13 @@ class AdminLoginController extends Controller
     		return redirect()->back()->withInput($request->only('email','remember'));
     	//not successfull redirect back to login with form data
     }
+	public function logout( Request $request ){
 
+       
+        Auth::guard('admin')->logout();
+        //$request->session()->invalidate();
+        return redirect('/admin');
+
+     }
 	
 }
