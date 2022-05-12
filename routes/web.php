@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\ServiceAdminController;
 use App\Http\Controllers\Admin\BlogAdminController;
 use App\Http\Controllers\User\ServiceController;
 use App\Http\Controllers\User\BlogController;
+use App\Http\Controllers\User\HomeController;
+
 
 
 
@@ -28,9 +30,9 @@ use App\Http\Controllers\User\BlogController;
 */
 
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
 Route::get('/about', function () {
     return view('about');
@@ -47,6 +49,7 @@ Route::get('/about', function () {
 // Route::get('/contact', function () {
 //     return view('contact');
 // })->name('contact');
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::get('/service', [ServiceController::class,'index'])->name('service');
 Route::get('/blog', [BlogController::class,'index'])->name('blog');

@@ -15,12 +15,14 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-     // dd("hii");
+
        $support             =       new Contact;
        $support->name       =       $request->name;
        $support->email      =       $request->email;
        $support->subject    =       $request->subject;
        $support->message    =       $request->message;
+       $support->service    =       $request->service;
+       $support->phone    =       $request->mobile;
        
        // echo"<pre>";
        // print_r($support);
@@ -28,11 +30,11 @@ class ContactController extends Controller
       
       //  session::flash('success', 'The Message Has Been Sent Successfully!');
       //  if($request->page==1){
-      //     // return redirect()->route('home');
+      //      return redirect()->route('home');
 
       //   }
       //   else{
-      //     // return redirect()->route('usercontact.store');
+      //      return redirect()->route('usercontact.store');
 
       //   }
       if (!$support->save()) {
@@ -49,5 +51,5 @@ class ContactController extends Controller
 
       return $response;
 
-    }
+     }
 }

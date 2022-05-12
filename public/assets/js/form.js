@@ -97,6 +97,11 @@ $(document).ready(function () {
 			email = $('#modal-email').val().trim(),
 			service = $('#modal-service').val().trim(),
 			mobile = $('#modal-mobile').val().trim();
+			message='';
+			subject='';
+
+			//console.log(mobile);
+
 
 		if (name == '' || email == '' || service == undefined || mobile == '') {
 			alert('Please fill-up the form before submit.');
@@ -111,17 +116,21 @@ $(document).ready(function () {
 		$('#modal-mobile').val('');
 
 		$.ajax({
-			url: 'contact.php',
+			url: './contact',
 			method: 'POST',
 			data: {
-				name,
-				email,
-				service,
-				mobile,
+				_token: $("#csrf").val(),
+				type: 1,
+				name : name,
+				email : email,
+				service : service,
+				mobile : mobile,
+				subject : subject,
+				message : message,
 			},
 			success: function (result) {
 				var id = new Date().getTime().toString();
-				if (JSON.parse(result)?.status) {
+				if (result.status) {
 					var alertDivHtml = `<div id='${id}' class="alert alert-success alert-dismissible fade show" role="alert">
 										<strong>Your message successfully save. We will contact you soon.</strong> 
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">

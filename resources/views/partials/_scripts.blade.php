@@ -3,7 +3,7 @@
 	<script defer src="{{asset('assets/vendor/aos/aos.js')}}"></script>
 	<script defer>
 		window.addEventListener('load', function () {
-			$('#myModal').modal('hide');
+			$('#myModal').modal('show');
 			$("#modal-close-btn").on("click", function () {
 				$('#myModal').modal('hide');
 			})
