@@ -38,6 +38,8 @@
                      
                       <th>Subject</th>
                       <th>Message</th>
+                      <th>Service</th>
+                      <th>Phone Number</th>
                       <th>Message Date</th>
                       <!-- <th>Salary</th> -->
                     </tr>
@@ -45,10 +47,11 @@
                   <tfoot>
                     <tr>
                       <th>From</th>
-                      <th>Email</th>
-                     
+                      <th>Email</th>  
                       <th>Subject</th>
                       <th>Message</th>
+                      <th>Service</th>
+                      <th>Phone Number</th>
                       <th>Message Date</th>
                       <!-- <th>Salary</th> -->
                     </tr>
@@ -61,6 +64,9 @@
                       
                       <td>{{$contact->subject}}</td>
                       <td>{{$contact->message}}</td>
+                      <td>{{$contact->service}}</td>
+                      <td>{{$contact->phone}}</td>
+
                       <td>{{$contact->created_at}}</td>
                     </tr>
                   	@endforeach

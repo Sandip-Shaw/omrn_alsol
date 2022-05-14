@@ -40,12 +40,12 @@ class AdminController extends Controller
         return view('admin.home')->withVar($var);
     }
 
-    public function logout( Request $request ){
+    // public function logout( Request $request ){
 
        
-        Auth::guard('admin')->logout();
-        //$request->session()->invalidate();
-        return redirect('/login');
+    //     Auth::guard('admin')->logout();
+    //     //$request->session()->invalidate();
+    //     return redirect('/login');
 
-     }
+    //  }
 }

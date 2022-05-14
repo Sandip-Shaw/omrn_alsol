@@ -90,13 +90,15 @@
 					</h6>
 					<div>
 						<form id="modal-form">
+						@csrf()
+					<input type="hidden" name="_token" id="csrf" value="{{Session::token()}}">
 							<div class="form-group mt-2 mb-2">
 								<select class="form-control" id="modal-service" required>
 									<option>Service Looking for</option>
 									<option value="Surveillance Service">Surveillance Service</option>
 									<option value="Pre-Marital Investigation">Pre-Marital Investigation</option>
 									<option value="Post-Marital Investigation">Post-Marital Investigation</option>
-									<option value="Legal Help">Legal Help/option></option>
+									<option value="Legal Help">Legal Help/option</option>
 								</select>
 							</div>
 							<div class="form-group mb-2">
