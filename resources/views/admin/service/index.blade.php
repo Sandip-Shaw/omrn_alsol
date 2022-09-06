@@ -1,5 +1,5 @@
 @extends('admin.adminmain')
- @section('title',"image")
+ @section('title',"Service")
  @section('stylesheets')
 
  	  <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
@@ -18,7 +18,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">image</h1>
+          <h1 class="h3 mb-2 text-gray-800">Service</h1>
           <p class="mb-4"> 
           	<!-- <a target="_blank" href="https://datatables.net">official DataTables documentation</a>. -->
           </p>
