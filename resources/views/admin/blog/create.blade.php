@@ -10,8 +10,8 @@
 <section class="scrollable padder">
 
  			<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                <li><a href=""><i class="fa fa-home"></i>Home</a></li>>
-                <li><a href="">Blog management</a></li>>
+                <li><a href="{{url('/admin')}}"><i class="fa fa-home"></i>Home</a></li>>
+                <li><a href="{{url('/admin/blog/')}}">Blog management</a></li>>
                 <li><a href="">Add Image</a></li>
             </ul>
 

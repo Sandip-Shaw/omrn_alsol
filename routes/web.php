@@ -58,7 +58,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('usercontact.store');
 
 Route::prefix('admin')->group(function() {
-    Route::get('/login', [AdminLoginController::class,'showLoginForm'])->name('admin.login');
+    Route::get('/login', [AdminLoginController::class,'showLoginForm'])->name('login');
     Route::post('/login',[AdminLoginController::class,'login'])->name('admin.login.submit');
     Route::get('/', [AdminController::class,'index'])->name('adminDashboard');
     #Route::resource('contact', 'Admin\ContactController');
@@ -68,6 +68,6 @@ Route::prefix('admin')->group(function() {
 
     Route::get('service/delete/{id}', [ServiceAdminController::class,'delete'])->name('admin.service.delete');
     Route::get('blog/delete/{id}', [BlogAdminController::class,'delete'])->name('admin.blog.delete');
-    Route::post('/logout', [AdminLoginController::class,'logout'])->name('admin.logout');
+    Route::get('/logout', [AdminLoginController::class,'logout'])->name('logout');
 
 });
