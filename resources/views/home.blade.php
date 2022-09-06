@@ -103,18 +103,20 @@
 				</div>
 
 				<div class="row">
+				@foreach($service as $image)
 					<div class="col-md-3 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
 						<div class="card" style="width: 100%">
-							<img loading="lazy" src="{{asset('assets/img/surveillance.webp')}}" class="card-img-top"
+							<img loading="lazy" src="{{asset('/images/service/'.$image->image)}}" class="card-img-top"
 								alt="service" />
 							<div class="card-body">
-								<h4 class="card-title">Surveillance Service</h4>
-								<p class="card-text">This helps in preventing crime. Moreover, it helps in protecting
-									people, objects and groups or the investigation of crime.</p>
+								<h4 class="card-title">{{$image->title}}</h4>
+								<p class="card-text">{{$image->description}}</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
+				@endforeach
+				</div>
+					<!-- <div class="col-md-3 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
 						<div class="card" style="width: 100%">
 							<img loading="lazy" src="{{asset('assets/img/preMatrimonial.webp')}}" class="card-img-top"
 								alt="service" />
@@ -235,7 +237,7 @@
 									investigating if there is any fishy incident taking place.</p>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
@@ -347,7 +349,9 @@
 			</div>
 
 			<div class="container mt-3" data-aos="fade-up" data-aos-delay="100">
-				<form action="#" method="post" role="form" class="box form p-4 pt-5" id="contact-form">
+				<form action="{{route('usercontact.store')}}" method="post" role="form" class="box form p-4 pt-5" id="contact-form">
+					@csrf()
+					<input type="hidden" name="_token" id="csrf" value="{{Session::token()}}">
 					<div class="row">
 						<div class="col-md-6 form-group">
 							<input type="text" name="name" class="form-control" id="input-name" placeholder="Your Name"

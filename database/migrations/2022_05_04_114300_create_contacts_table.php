@@ -17,9 +17,11 @@ class CreateContactsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email',100)->unique();
-            $table->string('subject');
-            $table->string('message');
-        
+            $table->string('subject')->nullable();
+            $table->string('message')->nullable();
+            $table->string('service')->nullable();
+            $table->string('phone')->nullable();
+
             $table->timestamps();
         });
     }
