@@ -61,12 +61,12 @@
                       <i class="fas fa-eye"></i>
                       </a>
                       <!-- &nbsp &nbsp &nbsp<i class="fas fa-trash"></i> -->
-                      <button class="formConfirm" data-form="#frmDelete-{{$image->id}}" data-title="Delete banner" data-message="Are you sure, you want to delete this Image?" >
+                      <!-- <button class="formConfirm" data-form="#frmDelete-{{$image->id}}" data-title="Delete banner" data-message="Are you sure, you want to delete this Image?" >
                           <i title="Delete" style="margin-right: 0;" class="fas fa-trash" aria-hidden="true"></i>
 
-                      </button>
+                      </button> -->
                      <!-- {{ dump($image->id)}} -->
-                      {!! Form::open(array(
+                      <!-- {!! Form::open(array(
                               'url' => route('admin.service.delete', array($image->id)),
                               'method' => 'get',
                               'style' => 'display:none',
@@ -74,9 +74,17 @@
                           ))
                       !!}
                       {!! Form::submit('Submit') !!}
-                      {!! Form::close() !!}
+                      {!! Form::close() !!} -->
 
+                      <a class="btn btn-danger text-white" href="{{ route('admin.service.delete', $image->id) }}"
+                                        onclick="event.preventDefault(); document.getElementById('delete-form-{{ $image->id }}').submit();">
+                                        <i title="Delete" style="margin-right: 0;" class="fas fa-trash" aria-hidden="true"></i>
+                            </a>
 
+                            <form id="delete-form-{{ $image->id }}" action="{{ route('admin.service.delete', $image->id) }}" method="GET" data-toggle="modal" data-target="#exampleModal" style="display: none;">
+                                @method('DELETE')
+                                @csrf
+                            </form>
 
 
 
@@ -100,7 +108,7 @@
       </div>
 
                       
-<div class="modal fade" id="formConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -109,12 +117,12 @@
       </div>
       <div class="modal-body" id="frm_body">Are you sure, you want to delete this Topic ?</div>
       <div class="modal-footer">
-        <button style='margin-left:10px;' type="button" class="btn btn-danger col-sm-2 pull-right" id="frm_submit">Confirm</button>
+        <button style='margin-left:10px;' type="submit" class="btn btn-danger col-sm-2 pull-right">Delete</button>
         <button type="button" class="btn btn-primary col-sm-2 pull-right" data-dismiss="modal" id="frm_cancel">Cancel</button>
       </div>
     </div>
   </div>
-</div>              
+</div>               -->
                      
 
 
@@ -131,31 +139,31 @@
   <script src="{{asset('admin/js/demo/datatables-demo.js')}}"></script>
 
 <script type="text/javascript">
-  $(document).ready(function(){
+//   $(document).ready(function(){
 
      
-  $('.formConfirm').on('click', function(e) {
-    //alert();
-        e.preventDefault();
-        var el = $(this);
-        //alert(el);
-        var title = el.attr('data-title');
-        var msg = el.attr('data-message');
-        var dataForm = el.attr('data-form');
+//   $('.formConfirm').on('click', function(e) {
+//     //alert();
+//         e.preventDefault();
+//         var el = $(this);
+//         //alert(el);
+//         var title = el.attr('data-title');
+//         var msg = el.attr('data-message');
+//         var dataForm = el.attr('data-form');
         
-        $('#formConfirm')
-        .find('#frm_body').html(msg)
-        .end().find('#frm_title').html(title)
-        .end().modal('show');
+//         $('#formConfirm')
+//         .find('#frm_body').html(msg)
+//         .end().find('#frm_title').html(title)
+//         .end().modal('show');
         
-        $('#formConfirm').find('#frm_submit').attr('data-form', dataForm);
-  });
-  $('#formConfirm').on('click', '#frm_submit', function(e) {
-        var id = $(this).attr('data-form');
-        //alert(id);
-        $(id).submit();
-  });
-});
+//         $('#formConfirm').find('#frm_submit').attr('data-form', dataForm);
+//   });
+//   $('#formConfirm').on('click', '#frm_submit', function(e) {
+//         var id = $(this).attr('data-form');
+//         alert(id);
+//         $(id).submit();
+//   });
+// });
 
 </script>
  @endsection
