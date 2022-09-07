@@ -79,8 +79,6 @@
 
 
 
-
-
                     </td>
                       <td>{{$image->title}}</td>
                       <td>{{strlen($image->description)>50?substr($image->description,0,50).'...':$image->description}}</td>

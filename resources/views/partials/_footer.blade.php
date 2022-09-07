@@ -27,19 +27,19 @@
 				<div class="col-lg-3 col-md-6 footer-links">
 					<h4>Our Services</h4>
 					<ul>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Surveillance Service</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Pre-Marital Investigation</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Post-Marital Investigation</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Legal Help</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Undercover Operations</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Shadowing</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Extramarital Affair Investigation</a>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Surveillance Service</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Pre-Marital Investigation</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Post-Marital Investigation</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Legal Help</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Undercover Operations</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Shadowing</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Extramarital Affair Investigation</a>
 						</li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Fraud cases Investigation</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Missing person tracing</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Employment verification</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Family Background</a></li>
-						<li><i class="bi bi-chevron-double-right"></i> <a href="#">Corporate Investigation</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Fraud cases Investigation</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Missing person tracing</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Employment verification</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Family Background</a></li>
+						<li><i class="bi bi-chevron-double-right"></i> <a href="{{route('service')}}">Corporate Investigation</a></li>
 					</ul>
 				</div>
 
